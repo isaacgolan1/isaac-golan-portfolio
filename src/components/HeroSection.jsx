@@ -29,7 +29,7 @@ export default function HeroSection() {
           <h2 className="text-[20px] font-bold text-ink">
             Technical Sales Engineer
           </h2>
-          <ul className="mt-3 space-y-1 text-[14px] leading-relaxed text-[#555]">
+          <ul className="mt-3 space-y-1 text-[15px] leading-relaxed text-[#444]">
             <li className="flex gap-2">
               <span className="text-[#999]">•</span>
               <span>Solutions Engineering</span>
@@ -68,10 +68,10 @@ export default function HeroSection() {
             rel={contact.external ? 'noopener noreferrer' : undefined}
             className="flex flex-1 flex-col justify-center border-b border-black/10 px-6 py-3 transition-all duration-200 last:border-b-0 hover:-translate-y-0.5 hover:bg-hover"
           >
-            <span className="text-[11px] tracking-[0.5px] text-[#999] uppercase">
+            <span className="text-[12px] tracking-[0.5px] text-[#999] uppercase">
               {contact.label}
             </span>
-            <span className="mt-0.5 text-[14px] font-medium text-ink">
+            <span className="mt-0.5 text-[15px] font-medium text-ink">
               {contact.value}
             </span>
           </a>
@@ -85,16 +85,16 @@ export default function HeroSection() {
 
       {/* Bottom-middle: education */}
       <div className="bento-cell flex h-56 flex-col justify-center bg-white p-6">
-        <span className="text-[11px] tracking-[0.5px] text-[#999] uppercase">
+        <span className="text-[12px] tracking-[0.5px] text-[#999] uppercase">
           Education
         </span>
-        <p className="mt-2 text-[15px] font-bold text-ink">
+        <p className="mt-2 text-[16px] font-bold text-ink">
           California Polytechnic State University, San Luis Obispo
         </p>
-        <p className="text-[13px] text-[#666]">
+        <p className="text-[14px] text-[#555]">
           Mechanical Engineering, Minor in Mathematics
         </p>
-        <p className="mt-3 text-[13px] font-medium text-ink">
+        <p className="mt-3 text-[14px] font-medium text-ink">
           FE Mechanical (Passed), EIT
         </p>
       </div>

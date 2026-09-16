@@ -1,51 +1,50 @@
 # Isaac Golan — Portfolio
 
-One-page portfolio built with React, Vite, Tailwind CSS, and a Three.js
-particle animation. No navigation bar — single scroll from the bento-grid
-hero into the experience/projects list.
+React + Vite portfolio site. The home page is a one-page scroll (bento-grid
+hero into Professional Experience / Projects lists); each experience and
+project entry links out to its own detail route with a back link, built as
+a skeleton to be filled in further per entry.
 
 ## Stack
 
-- React 19 + Vite
+- React 19 + Vite, routed with `react-router-dom`
 - Tailwind CSS v4 (via `@tailwindcss/vite`)
-- Three.js for the fluid particle animation
+- `webgl-fluid` for the interactive ink/smoke simulation in the hero grid
 - Outfit (Google Fonts) as the display/body typeface
 
 ## Structure
 
 ```
 src/
+  App.jsx                    routes: "/" (home), "/experience/:slug",
+                              "/projects/:slug"
+  data/
+    entries.js                single source of truth for every experience
+                               and project entry (title, org, location,
+                               period, and optional intro/logo/logoUrl/
+                               note/description/sections/gallery)
   components/
-    HeroSection.jsx        bento grid: bio, name, contact, particles, education, photo
-    ExperienceSection.jsx  accordion list of roles/projects
-    ParticleBackground.jsx Three.js canvas used inside the hero grid
-  index.css                Tailwind entry + border-collapse grid helpers
-  App.jsx                  layout wrapper (Hero + Experience, nothing else)
+    HeroSection.jsx           bento grid: bio, name, contact, fluid sim,
+                               education, artwork
+    FluidSimulation.jsx       webgl-fluid canvas used in the hero grid
+    ExperienceSection.jsx     Professional Experience / Projects lists;
+                               each card links to its detail page
+  pages/
+    EntryDetailPage.jsx       generic detail page, driven entirely by the
+                               matched entry's fields in data/entries.js
+  index.css                   Tailwind entry + border-collapse grid helpers
 ```
 
-## Develop
+`components/ParticleBackground.jsx` (Three.js) and the `three` dependency
+are leftover from an earlier version of the hero animation — no longer
+imported anywhere, kept in place rather than deleted.
 
-```bash
-npm install
-npm run dev
-```
+## Adding or editing content
 
-## Build
-
-```bash
-npm run build   # outputs to dist/
-npm run preview
-```
-
-## Deploy (Vercel)
-
-This repo includes a `vercel.json` (framework: vite, build: `npm run build`,
-output: `dist`). Push to a Git repo and import it in Vercel, or deploy
-directly from the CLI:
-
-```bash
-npx vercel        # preview deploy
-npx vercel --prod # production deploy
-```
-
-No backend/environment variables are required.
+Everything shown on the home page cards and their detail pages comes from
+`src/data/entries.js` — add or edit an object in `PROFESSIONAL_EXPERIENCE`
+or `PROJECTS` and both the list and the detail route pick it up
+automatically via the entry's `slug`. Supported optional fields per entry:
+`logo` / `logoUrl`, `intro`, `disclaimer`, `note`, `description` (string or
+bullet array), `sections` (each with `content`, `image`, `demoUrl`, and/or
+nested `subsections`), and `gallery` (image + caption pairs).

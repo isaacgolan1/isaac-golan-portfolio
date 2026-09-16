@@ -96,6 +96,19 @@ export default function EntryDetailPage({ entries, backTo, backLabel }) {
               {section.content}
             </p>
           )}
+          {section.items && (
+            <ul className="mt-3 space-y-3">
+              {section.items.map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-2 text-[15px] leading-relaxed text-[#555]"
+                >
+                  <span className="text-[#999]">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           {section.image &&
             (section.demoUrl ? (
               <a

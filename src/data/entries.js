@@ -3,6 +3,7 @@ import troubleshootingGuideScreenshot from '../assets/troubleshooting-guide-scre
 import kairosLogo from '../assets/Kairos-logo.png'
 import grappleImage from '../assets/grapple.png'
 import diabloPoolImage from '../assets/diablo-pool.jpg'
+import meyersPlusLogo from '../assets/meyersPlus_engineers2.png'
 
 export const PROFESSIONAL_EXPERIENCE = [
   {
@@ -87,8 +88,37 @@ export const PROFESSIONAL_EXPERIENCE = [
     org: 'Meyers+ Engineers',
     location: 'San Francisco, CA',
     period: 'Summer 2024',
-    description:
-      'Designed, prototyped, and tested mechanical products from concept through manufacturing. Worked with CAD software and collaborated with cross-functional teams.',
+    logo: meyersPlusLogo,
+    logoUrl: 'https://www.meyersplus.com/',
+    intro:
+      'Construction design consulting firm specializing in mechanical, electrical, plumbing, and fire protection systems for commercial and residential projects. Gained hands-on experience applying engineering fundamentals to real building systems.',
+    sections: [
+      {
+        title: 'Energy Modeling',
+        items: [
+          'Collaborated with the High Performance Design team on building energy simulations (IES)',
+          'Performed energy code compliance analysis and optimization studies',
+          'Window-to-wall ratio thermal load analysis, selected glazing and insulation, calculated heat transfer coefficients',
+        ],
+      },
+      {
+        title: 'Design & Drafting',
+        items: [
+          'Produced detailed engineering drawings in AutoCAD and Revit',
+          'Completed load calculations and equipment selection for HVAC systems',
+          'Developed ISO clean room compliance reports for MERV/HEPA filter retrofits',
+          'Designed VRF systems, fan coil units, and air distribution strategies',
+        ],
+      },
+      {
+        title: 'What I Learned',
+        items: [
+          'As the only Mechanical intern, worked across diverse projects and disciplines',
+          'Value of clear communication and collaboration in multidisciplinary teams',
+          'How to navigate competing pressures: deadlines, budgets, and safety on construction projects',
+        ],
+      },
+    ],
   },
   {
     slug: 'instructional-student-assistant',

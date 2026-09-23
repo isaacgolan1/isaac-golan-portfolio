@@ -4,6 +4,9 @@ import kairosLogo from '../assets/Kairos-logo.png'
 import grappleImage from '../assets/grapple.png'
 import diabloPoolImage from '../assets/diablo-pool.jpg'
 import meyersPlusLogo from '../assets/meyersPlus_engineers2.png'
+import teachingImage1 from '../assets/img1.avif'
+import teachingImage2 from '../assets/img2.avif'
+import teachingImage3 from '../assets/img3.avif'
 
 export const PROFESSIONAL_EXPERIENCE = [
   {
@@ -41,7 +44,7 @@ export const PROFESSIONAL_EXPERIENCE = [
     logo: kairosLogo,
     logoUrl: 'https://www.kairospower.com/',
     intro:
-      'Summer intern 2025 at Kairos Power, an advanced nuclear energy company developing small modular reactors (SMRs). Their approach: rapid iteration and vertical integration to deliver clean, affordable, safe energy.',
+      "I interned at Kairos Power in summer 2025, an advanced nuclear energy company developing a fluoride salt-cooled high-temperature reactor. Kairos' emphasis on rapid iteration and vertical integration shaped my professional development. I remain humbled to have shared a room with some of the smartest people I have ever met.",
     disclaimer:
       '(Proprietary and export-controlled work—this page captures my experiences and key takeaways.)',
     sections: [
@@ -94,40 +97,47 @@ export const PROFESSIONAL_EXPERIENCE = [
       'Construction design consulting firm specializing in mechanical, electrical, plumbing, and fire protection systems for commercial and residential projects. Gained hands-on experience applying engineering fundamentals to real building systems.',
     sections: [
       {
-        title: 'Energy Modeling',
+        title: 'Design, Energy Modeling, Project Management',
         items: [
-          'Collaborated with the High Performance Design team on building energy simulations (IES)',
-          'Performed energy code compliance analysis and optimization studies',
-          'Window-to-wall ratio thermal load analysis, selected glazing and insulation, calculated heat transfer coefficients',
-        ],
-      },
-      {
-        title: 'Design & Drafting',
-        items: [
-          'Produced detailed engineering drawings in AutoCAD and Revit',
-          'Completed load calculations and equipment selection for HVAC systems',
-          'Developed ISO clean room compliance reports for MERV/HEPA filter retrofits',
-          'Designed VRF systems, fan coil units, and air distribution strategies',
-        ],
-      },
-      {
-        title: 'What I Learned',
-        items: [
-          'As the only Mechanical intern, worked across diverse projects and disciplines',
-          'Value of clear communication and collaboration in multidisciplinary teams',
-          'How to navigate competing pressures: deadlines, budgets, and safety on construction projects',
+          "Collaborated on building energy simulations (IES) and code compliance analysis",
+          "Applied thermodynamics to optimize glazing, insulation, and HVAC equipment selection",
+          "Produced AutoCAD/Revit drawings and load calculations for mechanical systems",
+          "Aided in VRF system design"
         ],
       },
     ],
   },
   {
-    slug: 'instructional-student-assistant',
-    title: 'Instructional Student Assistant',
+    slug: 'teaching-and-tutoring',
+    title: 'Teaching and Tutoring',
     org: 'Cal Poly Mathematics Department',
     location: 'San Luis Obispo, CA',
     period: 'Winter 2022 - Spring 2025',
-    description:
-      'High school and undergraduate mathematics tutoring, workshop facilitation, and curriculum development. Focus on making complex concepts accessible and engaging.',
+    intro: "I have a passion for teaching; it is intoxicating and truly fun. I'm extremely proud of the impact I've made on 100s of students, on and off the transcript. Students have achieved jumps of 3 letter grades after my workshops and private tutoring. ",
+    description: {
+      text: 'The majority of my focus was on my workshop, a bi-weekly 1.5 hour meeting with students from one undergraduate course. I worked with professors to prepare materials, activities, a Canvas course page, grading, and lesson plans for up to 20 students. I held this position for three years and have facilitated workshops for:',
+      items: [
+        'Calculus I',
+        'Calculus for Business and Economics',
+        'Calculus II',
+        'Linear Analysis I (Intro Differential Equations & Linear Algebra)',
+      ],
+    },
+    sections: [
+      {
+        title: 'Student Testimonials',
+        items: [
+          '"He was very understanding of our knowledge in linear analysis and helped us succeed in the class. He was very helpful and one can tell that he enjoyed being here."',
+          '"Great leader and was super chill and non-teacher like so it made our little workshop group super comfortable and in terms of the actual calculus and learning and was able to simplify really well and easier for me to understand."',
+          '"Isaac was well prepared for workshop and made sure the problems we did were relevant to our class lectures."',
+        ],
+      },
+    ],
+    gallery: [
+      { image: teachingImage1 },
+      { image: teachingImage2 },
+      { image: teachingImage3 },
+    ],
   },
 ]
 
@@ -139,7 +149,8 @@ export const PROJECTS = [
     location: 'San Luis Obispo, CA',
     period: 'Spring 2025',
     description:
-      'Developed finite element analysis models and solved transient heat transfer problems numerically. Used COMSOL and MATLAB for simulations and analysis.',
+      '',
+    pdf: '/Computational-Heat-Transfer-Tube-Bank-Analysis.pdf',
   },
   {
     slug: 'atrium-radiant-heating-system',
@@ -148,6 +159,13 @@ export const PROJECTS = [
     location: 'San Luis Obispo, CA',
     period: 'Winter 2025',
     description:
-      'Designed an efficient radiant heating system for large atrium spaces with thermal analysis. Optimized for comfort and energy efficiency in high-ceiling environments.',
+      'Designed an efficient radiant heating system for a large atrium space. Optimized for comfort and energy efficiency in high-ceiling environments.',
+    pdfs: [
+      {
+        url: '/Atrium-Radiant-System-Presentation.pdf',
+        label: 'Presentation',
+      },
+      { url: '/Atrium-Radiant-System-Report.pdf', label: 'Report' },
+    ],
   },
 ]

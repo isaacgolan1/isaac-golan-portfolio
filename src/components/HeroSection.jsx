@@ -4,8 +4,8 @@ import heroArtwork from '../assets/186937@2x.jpg'
 const CONTACTS = [
   {
     label: 'Email',
-    value: 'ieg@golanworks.com',
-    href: 'mailto:ieg@golanworks.com',
+    value: 'isaac@isaacgolan.com',
+    href: 'mailto:isaac@isaacgolan.com',
   },
   {
     label: 'Phone',

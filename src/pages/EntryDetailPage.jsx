@@ -76,6 +76,25 @@ export default function EntryDetailPage({ entries, backTo, backLabel }) {
                 </li>
               ))}
             </ul>
+          ) : typeof entry.description === 'object' ? (
+            <>
+              <p className="text-[15px] leading-relaxed text-[#555]">
+                {entry.description.text}
+              </p>
+              {entry.description.items && (
+                <ul className="mt-3 space-y-3">
+                  {entry.description.items.map((point) => (
+                    <li
+                      key={point}
+                      className="flex gap-2 text-[15px] leading-relaxed text-[#555]"
+                    >
+                      <span className="text-[#999]">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
           ) : (
             <p className="text-[15px] leading-relaxed text-[#555]">
               {entry.description}
@@ -169,21 +188,64 @@ export default function EntryDetailPage({ entries, backTo, backLabel }) {
       ))}
 
       {entry.gallery && (
-        <div className="mt-10 grid grid-cols-1 items-end gap-6 border-t border-black/10 pt-10 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 items-end gap-6 border-t border-black/10 pt-10 sm:grid-cols-2 lg:grid-cols-3">
           {entry.gallery.map((item) => (
-            <figure key={item.caption}>
+            <figure key={item.image}>
               <img
                 src={item.image}
-                alt={item.caption}
+                alt={item.caption ?? ''}
                 className="max-h-[320px] w-auto rounded border border-black/10 object-contain"
               />
-              <figcaption className="mt-2 text-[13px] text-[#666]">
-                {item.caption}
-              </figcaption>
+              {item.caption && (
+                <figcaption className="mt-2 text-[13px] text-[#666]">
+                  {item.caption}
+                </figcaption>
+              )}
             </figure>
           ))}
         </div>
       )}
+
+      {entry.pdf && (
+        <div className="mt-10 border-t border-black/10 pt-10">
+          <iframe
+            src={entry.pdf}
+            title={`${entry.title} PDF`}
+            className="h-[80vh] w-full rounded border border-black/10"
+          />
+          <a
+            href={entry.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-[13px] text-[#666] hover:text-ink"
+          >
+            Open PDF in new tab →
+          </a>
+        </div>
+      )}
+
+      {entry.pdfs?.map((item) => (
+        <div key={item.url} className="mt-10 border-t border-black/10 pt-10">
+          {item.label && (
+            <h2 className="mb-3 text-[20px] font-bold text-ink">
+              {item.label}
+            </h2>
+          )}
+          <iframe
+            src={item.url}
+            title={item.label || `${entry.title} PDF`}
+            className="h-[80vh] w-full rounded border border-black/10"
+          />
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-[13px] text-[#666] hover:text-ink"
+          >
+            Open PDF in new tab →
+          </a>
+        </div>
+      ))}
     </div>
   )
 }

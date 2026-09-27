@@ -9,6 +9,7 @@ import {
 import HeroSection from './components/HeroSection'
 import ExperienceSection from './components/ExperienceSection'
 import EntryDetailPage from './pages/EntryDetailPage'
+import ReviewsPage from './pages/ReviewsPage'
 import { PROFESSIONAL_EXPERIENCE, PROJECTS } from './data/entries'
 
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function App() {
       <div className="min-h-screen bg-paper">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
           <Route
             path="/experience/instructional-student-assistant"
             element={<Navigate to="/experience/teaching-and-tutoring" replace />}

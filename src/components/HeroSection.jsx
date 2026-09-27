@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import FluidSimulation from './FluidSimulation'
 import heroArtwork from '../assets/186937@2x.jpg'
 
@@ -99,14 +100,21 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* Bottom-right: artwork */}
-      <div className="bento-cell h-56 overflow-hidden bg-white">
+      {/* Bottom-right: artwork, links to reviews */}
+      <Link
+        to="/reviews"
+        className="bento-cell group relative block h-56 overflow-hidden bg-white"
+      >
         <img
           src={heroArtwork}
           alt="M.C. Escher-style staircase illustration"
           className="h-full w-full object-cover object-[center_15%]"
         />
-      </div>
+        {/* Always visible below md: touch devices have no hover */}
+        <span className="absolute inset-0 flex items-center justify-center bg-black/40 text-[14px] font-bold tracking-[2px] text-white uppercase transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100">
+          Reviews
+        </span>
+      </Link>
     </section>
   )
 }

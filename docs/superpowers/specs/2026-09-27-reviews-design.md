@@ -1,7 +1,7 @@
 # Reviews — Design
 
 Date: 2026-09-27
-Status: Approved design, pending spec review
+Status: Implemented (standalone variant chosen, 2026-09-27)
 
 ## Goal
 

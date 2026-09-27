@@ -103,6 +103,7 @@ export default function HeroSection() {
       {/* Bottom-right: artwork, links to reviews */}
       <Link
         to="/reviews"
+        aria-label="Reviews"
         className="bento-cell group relative block h-56 overflow-hidden bg-white"
       >
         <img

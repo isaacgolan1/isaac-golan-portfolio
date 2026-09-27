@@ -1,5 +1,11 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from 'react-router-dom'
 import HeroSection from './components/HeroSection'
 import ExperienceSection from './components/ExperienceSection'
 import EntryDetailPage from './pages/EntryDetailPage'
@@ -31,6 +37,10 @@ function App() {
       <div className="min-h-screen bg-paper">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/experience/instructional-student-assistant"
+            element={<Navigate to="/experience/teaching-and-tutoring" replace />}
+          />
           <Route
             path="/experience/:slug"
             element={

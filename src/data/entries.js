@@ -148,8 +148,6 @@ export const PROJECTS = [
     org: 'Computational Heat Transfer',
     location: 'San Luis Obispo, CA',
     period: 'Spring 2025',
-    description:
-      '',
     pdf: '/Computational-Heat-Transfer-Tube-Bank-Analysis.pdf',
   },
   {
